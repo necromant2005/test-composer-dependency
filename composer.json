@@ -1,0 +1,29 @@
+{
+    "name": "necromant2005/test-composer-dependency",
+    "type": "library",
+    "homepage": "https://github.com/necromant2005/test-composer-dependency",
+    "authors": [
+        {
+            "name": "Rostislav Mykhajliw",
+            "email": "necromant2005@gmail.com",
+            "homepage": "https://github.com/necromant2005",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "classmap" : ["Hook.php"]
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "TestComposerDependency\\Hook::invoke"
+        ],
+        "post-update-cmd": [
+            "TestComposerDependency\\Hook::invoke"
+        ]
+    }
+}
